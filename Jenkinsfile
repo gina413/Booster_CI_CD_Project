@@ -21,7 +21,7 @@
 
         stage('deploy') {
           steps {
-            sh 'docker run -d -p 9000:8000 ginaemil/myapp:v1.0'
+            sh 'docker run -d -p 6000:8000 ginaemil/myapp:v1.0'
         }
         }
     }
