@@ -11,7 +11,7 @@
 
         stage('push_image') {
             steps {
-              withCredentials([usernamePassword(credentialsId:"docker",usernameVariable:"USERNAME",passwordVariable:"PASSWORD")]){
+              withCredentials([usernamePassword(credentialsId:"docker_gina",usernameVariable:"USERNAME",passwordVariable:"PASSWORD")]){
               sh 'docker login --username $USERNAME --password $PASSWORD'
               
               sh 'docker push ginaemil/myapp:v1.0'
