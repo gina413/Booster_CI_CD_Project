@@ -5,7 +5,7 @@
         stage('build_image') {
             steps {
           
-              sh 'docker build -t ginaemil/myapp:v1.0 .'
+              sh 'docker build -t gina184/myapp:v1.0 .'
             }
             }
 
@@ -14,14 +14,14 @@
               withCredentials([usernamePassword(credentialsId:"docker_gina",usernameVariable:"USERNAME",passwordVariable:"PASSWORD")]){
               sh 'docker login --username $USERNAME --password $PASSWORD'
               
-              sh 'docker push ginaemil/myapp:v1.0'
+              sh 'docker push gina184/myapp:v1.0'
               }
             }
         }
 
         stage('deploy') {
           steps {
-            sh 'docker run -d -p 9000:8000 ginaemil/myapp:v1.0'
+            sh 'docker run -d -p 9000:8000 gina184/myapp:v1.0'
         }
         }
     }
